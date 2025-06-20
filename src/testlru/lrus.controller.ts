@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { LruServices } from "./lrus.services";
-import { Productdto } from "src/Dynamiclru/dto/user.dto";
+import { Productdto } from "src/Dynamic_lru/dto/user.dto";
 
 @Controller("test")
 export class LruController{

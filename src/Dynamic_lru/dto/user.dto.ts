@@ -15,7 +15,7 @@ import {
   IsNumber,
 } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
-import { BaseDTO } from 'src/Dynamiclru/repo.services'; // Adjust path as per your structure
+import { BaseDTO } from 'src/Dynamic_lru/repo.services'; // Adjust path as per your structure
 
 // Address DTO
 export class AddressDto {

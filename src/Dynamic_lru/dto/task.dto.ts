@@ -11,7 +11,7 @@ import {
   IsString,
   ValidateNested
 } from "class-validator";
-import { BaseDTO } from "src/Dynamiclru/repo.services";
+import { BaseDTO } from "src/Dynamic_lru/repo.services";
 
 // ✅ Task DTO with BaseDTO for repo compatibility
 export class TaskDto implements BaseDTO {
