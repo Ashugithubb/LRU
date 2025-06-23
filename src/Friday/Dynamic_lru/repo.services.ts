@@ -15,12 +15,13 @@ export class Repo {
   private cache = new Map<string, CustomLRU<number, DTO>>();
   private MAX_ITEMS = 2;
 
-  private getStorageKey(dto: DTO): string {
-    if (dto instanceof CreateUserDto) return "user";
-    if (dto instanceof Productdto) return "product";
-    if (dto instanceof TaskDto) return "task";
-    else{return "This DTO TYPE is not present"};
-  }
+ private getStorageKey(dto: DTO): string {
+  const name = dto.constructor.name;
+  if (name === 'CreateUserDto') return 'user';
+  if (name === 'Productdto') return 'product';
+  if (name === 'TaskDto') return 'task';
+  throw new Error('Unknown DTO type');
+}
 
   private getCache(type: string): CustomLRU<number, DTO> {
     if (!this.cache.has(type)) {

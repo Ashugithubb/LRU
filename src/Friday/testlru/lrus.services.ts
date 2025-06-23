@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { Productdto } from "src/Dynamic_lru/dto/user.dto";
+import { Productdto } from "src/Friday/Dynamic_lru/dto/user.dto";
 
 @Injectable()
 export class LruServices {

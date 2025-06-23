@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { RepoModule } from './Dynamic_lru/repo.module';
-import { LruModule } from './testlru/lrus.module';
+import { RepoModule } from './Friday/Dynamic_lru/repo.module';
+import { LruModule } from './Friday/testlru/lrus.module';
+import { LruModule2 } from './updatedlru/lru.module';
 
 @Module({
-  imports: [RepoModule,LruModule],
+  imports: [RepoModule,LruModule,LruModule2],
   
 })
 export class AppModule {}
