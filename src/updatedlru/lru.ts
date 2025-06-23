@@ -8,7 +8,6 @@ class Node<K, V> {
     this.value = value as V
   }
 }
-
 export class LRUCache<K, V> {
   private map = new Map<K,Node<K,V>>
   private head:Node<K,V>
@@ -16,7 +15,7 @@ export class LRUCache<K, V> {
   private size = 0;
 
 
-  constructor(private limit: number) {
+  constructor(private capacity: number) {
     this.head = new Node<K, V>()
     this.tail = new Node<K, V>()
     this.head.next = this.tail;
@@ -60,7 +59,7 @@ export class LRUCache<K, V> {
       this.addNode(node)
       this.map.set(key,node)
       this.size++;
-      if(this.size > this.limit){
+      if(this.size > this.capacity){
       const lru = this.tail.prev!;
       this.removeNode(lru)
       this.map.delete(lru.key)

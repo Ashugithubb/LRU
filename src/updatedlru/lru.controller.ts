@@ -12,36 +12,36 @@ export class LruController<T> {
 
   @Get(':type')
   findAll(@Param('type') type: string) {
-    return this.lruservices.findAll(type);
+    return this.lruservices.FindAll(type);
   }
 
   @Get(':type/:id')
   findOne(@Param('type') type: string, @Param('id') id: string) {
-    return this.lruservices.findOne(type, (Number)(id));
+    return this.lruservices.FindOne(type, (Number)(id));
   }
 
   @Put(':type/:id')
   update(@Param('type') type: string, @Param('id') id: string, @Body() data: Partial<T>) {
-    return this.lruservices.update(type, (Number)(id), data);
+    return this.lruservices.Update(type, (Number)(id), data);
   }
 
   @Delete(':type/:id')
   delete(@Param('type') type: string, @Param('id') id: string) {
-    return this.lruservices.delete(type, (Number)(id));
+    return this.lruservices.Delete(type, (Number)(id));
   }
 
   @Put(':type/:id/upsert')
   upsert(@Param('type') type: string, @Param('id') id: string, @Body() data: T) {
-    return this.lruservices.upsert(type, (Number)(id), data);
+    return this.lruservices.Upsert(type, (Number)(id), data);
   }
 
   @Get('lru')
   getLru() {
-    return this.lruservices.getLru();
+    return this.lruservices.GetLru();
   }
 
   @Get('mru')
   getMru() {
-    return this.lruservices.getMru();
+    return this.lruservices.GetMru();
   }
 }
